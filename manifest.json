@@ -1,0 +1,29 @@
+{
+	"manifest_version": 2,
+	
+  "name": "Block Website",
+  "version": "1.0",
+  "description": "Allows to block website for givent time",
+  
+  "browser_action": {
+    "presistent" : false,
+	"default_popup": "popup.html",
+	"scripts": ["background.js"]
+  },
+  
+    "content_scripts": [
+      {
+        "matches": ["https://*/*", "http://*/*"],
+        "js": ["jquery.js","content.js"],
+        "run_at": "document_end"
+      }
+    ],
+	
+	"permissions":[
+        "contextMenus", 
+        "tabs",
+        "http://*/*",
+        "https://*/*"
+    ]
+  
+}
