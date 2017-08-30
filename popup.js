@@ -1,4 +1,9 @@
-function myfunction(){
-	console.log("yoloooooooo");
+// var app = chrome.runtime.getBackgroundPage();
+
+function hello() {
+  chrome.tabs.executeScript({
+    file: 'block.js'
+  }); 
 }
-document.getElementById("Blockbutton").onclick = myfunction;
+
+document.getElementById('clickme').addEventListener('click', hello);
